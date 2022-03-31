@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.form {
+  padding: 38px 26.43px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 363px;
+  gap: 17.7px;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.form input,
+select {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  height: 52.80000305175781px;
+}
+
+.form-control {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-control small {
+  font-size: 12px;
+  line-height: 20px;
+  color: #868e96;
+}
+
+.form-description,
+.form input[type="submit"] {
+  width: 100%;
+  grid-column: span 2;
+  max-width: 314px;
+}
+
+.form-description input {
+  background: #f8f9fa;
+}
+
+.form-amount input,
+.form-type select {
+  width: 100%;
+  border-radius: 8px;
+  padding: 0px, 16px, 0px, 16px;
+}
+
+.form input[type="submit"] {
+  background: #fd377e;
+  border: 2px solid #fd377e;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19.36px;
+}

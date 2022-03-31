@@ -1,0 +1,14 @@
+.navbar {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: #f8f9fa;
+  justify-content: space-between;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar img {
+  max-width: 122.68px;
+  height: 19.53px;
+}

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
+
+.total-money__container {
+  max-width: 363px;
+  display: grid;
+  font-family: "Nunito", sans-serif;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 8px 16px;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.total-money__amount {
+  text-align: end;
+  align-self: center;
+  grid-column: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  color: #fd377e;
+  align-items: flex-end;
+}
+
+.total-money__container p {
+  grid-column: span 2;
+  font-size: 12px;
+  color: #868e96;
+}

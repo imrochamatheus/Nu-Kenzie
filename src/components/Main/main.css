@@ -1,0 +1,26 @@
+.main-container {
+  gap: 59px;
+  padding-top: 39px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 26.43px;
+}
+
+@media screen and (min-width: 892px) {
+  .main-container {
+    gap: 59px;
+    padding-top: 39px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}

@@ -1,9 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import Form from "./components/Form";
+import Main from "./components/Main";
 import Header from "./components/Header";
-import TotalMoney from "./components/TotalMoney";
-import TransactionList from "./components/TransactionsList";
 
 function App() {
   const [transactions, setTransactions] = useState([
@@ -14,9 +12,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Form />
-      <TotalMoney />
-      <TransactionList />
+      <Main />
     </div>
   );
 }

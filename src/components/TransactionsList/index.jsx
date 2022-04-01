@@ -1,17 +1,20 @@
 import "./list.css";
 import { useState } from "react";
 import Transaction from "../Transaction";
+import CustomButton from "../CustomButton";
 
 const TransactionList = () => {
   const [filters, setFilters] = useState(["Todos", "Entradas", "Despesas"]);
 
   return (
     <>
-      <nav>
-        <h2>Resummo Financeiro</h2>
-        <ul className="filters-list">
+      <nav className="filters-container">
+        <h3>Resummo Financeiro</h3>
+        <ul className="filters-container__list">
           {filters.map((filter) => (
-            <li key={filter}>{filter}</li>
+            <li key={filter}>
+              <CustomButton className="filter-button">{filter}</CustomButton>
+            </li>
           ))}
         </ul>
       </nav>
@@ -19,11 +22,10 @@ const TransactionList = () => {
         <ul className="transactions-list">
           <Transaction />
           {/* {[...Array(5)].map((_, i) => (
-            <li key={i}>
+            <li key={i} className="card-empty">
               {
                 <img
                   src="./emptyCard.png"
-                  className="card-empty"
                   alt="Empty transaction card"
                 />
               }

@@ -1,0 +1,16 @@
+.default-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #e9ecef;
+  color: #868e96;
+  line-height: 19px;
+  min-width: 57px;
+  border: 1.4px solid #e9ecef;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+}

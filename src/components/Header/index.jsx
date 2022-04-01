@@ -1,10 +1,14 @@
 import "./header.css";
+import Section from "../Section";
+import CustomButton from "../CustomButton";
 
 const Header = () => {
   return (
     <nav className="navbar">
-      <img className="logo" src="./logo.svg" alt="Nu Kenzie logo" />
-      <button className="btn-return">Inicio</button>
+      <Section className="navbar-itens">
+        <img className="logo" src="./logo.svg" alt="Nu Kenzie logo" />
+        <CustomButton className="btn-login">Inicio</CustomButton>
+      </Section>
     </nav>
   );
 };

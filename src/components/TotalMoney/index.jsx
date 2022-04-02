@@ -3,7 +3,7 @@ import "./totalmoney.css";
 const TotalMoney = ({ transactions, convertToBRL }) => {
   const filterInputValues = ({ type }) => type === "recipe";
 
-  return (
+  return transactions.length ? (
     <div className="total-money__container">
       <h3>Valor Total</h3>
       <h3 className="total-money__amount">
@@ -15,6 +15,8 @@ const TotalMoney = ({ transactions, convertToBRL }) => {
       </h3>
       <p>O valor se refere às entradas</p>
     </div>
+  ) : (
+    <></>
   );
 };
 

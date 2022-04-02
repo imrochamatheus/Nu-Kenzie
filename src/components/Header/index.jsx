@@ -7,7 +7,7 @@ const Header = ({ switchPage }) => {
     <nav className="navbar">
       <Section className="navbar-itens">
         <img className="logo" src="./logo.svg" alt="Nu Kenzie logo" />
-        <CustomButton className="btn-login" onClick={switchPage}>
+        <CustomButton className="btn-logout" onClick={switchPage}>
           Inicio
         </CustomButton>
       </Section>

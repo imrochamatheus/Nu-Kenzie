@@ -41,8 +41,8 @@ const TransactionList = ({
   );
 
   const fakeTransactions = [
-    <li>
-      <h2 class="fake-transactions__title">
+    <li key={"title"}>
+      <h2 className="fake-transactions__title">
         Você ainda não tem nenhum lançamento
       </h2>
     </li>,

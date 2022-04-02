@@ -49,6 +49,7 @@
 .login-page__circle-container {
   width: 100%;
   max-width: 418px;
+  display: none;
 }
 
 .login-page__circle {
@@ -102,5 +103,11 @@
     padding: 0;
     justify-content: unset;
     align-items: unset;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .login-page__circle-container {
+    display: flex;
   }
 }

@@ -16,13 +16,16 @@
 .navbar-itens {
   width: 100%;
   padding: 0 26.43px;
-  max-width: 1000px;
+  max-width: 1030.43px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.btn-login {
+.btn-logout {
   width: 100%;
+  color: #868e96;
   max-width: 64px;
+  font-size: 16px;
+  margin-right: 0;
 }

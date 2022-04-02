@@ -14,6 +14,11 @@
   padding: 0 26.43px;
 }
 
+.section-container:nth-child(2) {
+  width: 100%;
+  max-width: 562px;
+}
+
 @media screen and (min-width: 892px) {
   .main-container {
     gap: 59px;

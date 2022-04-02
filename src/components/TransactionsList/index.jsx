@@ -10,21 +10,53 @@ const TransactionList = ({
   const filters = ["Todos", "Entradas", "Despesas"];
   const [currentFilter, setCurrentFilter] = useState("Todos");
 
-  const changeFilter = ({ target }) => setCurrentFilter(target.value);
-  const filterTransactions = () =>
-    transactions.filter(({ type }) => type === currentFilter);
-
-  const doesTheFilterExist = {
+  const dictionary = {
     Entradas: "recipe",
-    Despesas: "expenses",
-  }[currentFilter];
+    Despesas: "expense",
+  };
 
-  console.log(transactions);
+  const changeFilter = ({ target }) => setCurrentFilter(target.value);
+
+  const filterTransactions = () => {
+    const isAValidFilter = dictionary[currentFilter];
+
+    return isAValidFilter
+      ? transactions.filter(({ type }) => type === isAValidFilter)
+      : transactions;
+  };
+
+  const transactionsToBeRendered = filterTransactions().map(
+    (currentTransaction, i) => {
+      return (
+        <Transaction key={i}>
+          {{
+            transactions,
+            currentTransaction,
+            setTransactions,
+            convertToBRL,
+          }}
+        </Transaction>
+      );
+    }
+  );
+
+  const fakeTransactions = [
+    <li>
+      <h2 class="fake-transactions__title">
+        Você ainda não tem nenhum lançamento
+      </h2>
+    </li>,
+    ...[...Array(3)].map((_, i) => (
+      <li key={i} className="card-empty">
+        {<img src="./emptyCard.png" alt="Empty transaction card" />}
+      </li>
+    )),
+  ];
 
   return (
     <>
       <nav className="filters-container">
-        <h3>Resummo Financeiro</h3>
+        <h3>Resumo Financeiro</h3>
         <ul className="filters-container__list">
           {filters.map((filter) => (
             <li key={filter}>
@@ -41,44 +73,7 @@ const TransactionList = ({
       </nav>
       <div className="transactions-container">
         <ul className="transactions-list">
-          {doesTheFilterExist
-            ? filterTransactions()
-            : transactions.map((currentTransaction, i) => {
-                console.log(currentTransaction.type);
-                return (
-                  <Transaction key={i}>
-                    {{
-                      transactions,
-                      currentTransaction,
-                      setTransactions,
-                      convertToBRL,
-                    }}
-                  </Transaction>
-                );
-              })}
-          {/* {transactions.map((currentTransaction, i) => {
-            return (
-              <Transaction key={i}>
-                {{
-                  transactions,
-                  currentTransaction,
-                  setTransactions,
-                  convertToBRL,
-                }}
-              </Transaction>
-            );
-          })} */}
-          {/* <Transaction /> */}
-          {/* {[...Array(5)].map((_, i) => (
-            <li key={i} className="card-empty">
-              {
-                <img
-                  src="./emptyCard.png"
-                  alt="Empty transaction card"
-                />
-              }
-            </li>
-          ))} */}
+          {transactions.length ? transactionsToBeRendered : fakeTransactions}
         </ul>
       </div>
     </>

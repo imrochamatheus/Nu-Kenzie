@@ -29,6 +29,10 @@ select {
   height: 52.80000305175781px;
 }
 
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .form-control {
   display: flex;
   gap: 12px;

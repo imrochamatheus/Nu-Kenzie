@@ -7,19 +7,19 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const switchPage = () => setLoggedIn(!loggedIn);
 
-  const [transactions, setTransactions] = useState([
-    { description: "Salário recebido", type: "entrada", value: 2500 },
-    { description: "Conta de luz", type: "saída", value: -150 },
-  ]);
+  const [transactions, setTransactions] = useState([]);
 
   const transactionsLog = { transactions, setTransactions };
+
+  const convertToBRL = (value) =>
+    value.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
 
   return (
     <>
       {!loggedIn ? (
         <LoginPage {...{ switchPage }} />
       ) : (
-        <HomePage {...transactionsLog} />
+        <HomePage {...{ transactionsLog, switchPage, convertToBRL }} />
       )}
     </>
   );

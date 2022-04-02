@@ -3,7 +3,10 @@ import { useState } from "react";
 import Transaction from "../Transaction";
 import CustomButton from "../CustomButton";
 
-const TransactionList = () => {
+const TransactionList = ({
+  transactionsLog: { transactions, setTransactions },
+  convertToBRL,
+}) => {
   const [filters, setFilters] = useState(["Todos", "Entradas", "Despesas"]);
 
   return (
@@ -20,7 +23,17 @@ const TransactionList = () => {
       </nav>
       <div className="transactions-container">
         <ul className="transactions-list">
-          <Transaction />
+          {transactions.map((currentTransaction, i) => (
+            <Transaction key={i}>
+              {{
+                transactions,
+                currentTransaction,
+                setTransactions,
+                convertToBRL,
+              }}
+            </Transaction>
+          ))}
+          {/* <Transaction /> */}
           {/* {[...Array(5)].map((_, i) => (
             <li key={i} className="card-empty">
               {

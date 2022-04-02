@@ -4,15 +4,18 @@ import Section from "../Section";
 import TotalMoney from "../TotalMoney";
 import TransactionList from "../TransactionsList";
 
-const Main = () => {
+const Main = ({ transactionsLog, convertToBRL }) => {
   return (
     <Section className="main-container">
       <Section className="section-container">
-        <Form />
-        <TotalMoney />
+        <Form transactionsLog={transactionsLog} />
+        <TotalMoney
+          transactions={transactionsLog.transactions}
+          convertToBRL={convertToBRL}
+        />
       </Section>
       <Section className="section-container">
-        <TransactionList />
+        <TransactionList {...{ transactionsLog, convertToBRL }} />
       </Section>
     </Section>
   );

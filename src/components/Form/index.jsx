@@ -25,6 +25,7 @@ const Form = ({ transactionsLog: { transactions, setTransactions } }) => {
       <div className="form-control form-amount">
         <label htmlFor="amount">Valor:</label>
         <input type="number" step={0.01} name="value" required />
+        <i className="fa-solid fa-brazilian-real-sign icon"></i>
       </div>
       <div className="form-control form-type">
         <label htmlFor="type">Tipo de valor:</label>

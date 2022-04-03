@@ -98,7 +98,7 @@
   }
 } */
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 500px) {
   .login-page__main-container {
     padding: 0;
     justify-content: unset;
